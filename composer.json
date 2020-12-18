@@ -1,0 +1,15 @@
+{
+    "name": "exmobile/press",
+    "description": "An elegant markdown-powered blog for the Laravel framework.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitrii Grishin",
+            "email": "dmigrishin@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "orchestra/testbench": "^5.12"
+    }
+}
