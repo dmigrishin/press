@@ -1,15 +1,25 @@
 {
-    "name": "exmobile/press",
-    "description": "An elegant markdown-powered blog for the Laravel framework.",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Dmitrii Grishin",
-            "email": "dmigrishin@gmail.com"
-        }
-    ],
-    "require": {},
-    "require-dev": {
-        "orchestra/testbench": "^5.12"
+  "name": "exmobile/press",
+  "description": "An elegant markdown-powered blog for the Laravel framework.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dmitrii Grishin",
+      "email": "dmigrishin@gmail.com"
     }
+  ],
+  "require": {},
+  "require-dev": {
+    "orchestra/testbench": "^5.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Coderstape\\Press\\src\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Coderstape\\Press\\Tests\\": "tests/"
+    }
+  }
 }
