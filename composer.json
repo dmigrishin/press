@@ -14,12 +14,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Coderstape\\Press\\src\\": "src/"
+      "CodersTape\\Press\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Coderstape\\Press\\Tests\\": "tests/"
+      "CodersTape\\Press\\": "tests/"
     }
   }
 }
