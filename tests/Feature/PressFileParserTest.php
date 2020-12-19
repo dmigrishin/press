@@ -36,4 +36,17 @@ class PressFileParserTest extends TestCase{
 
 
     }
+
+    /** @test */
+    public function the_body_gets_saved_and_trimmed(){
+
+        $pressFileParser = (new PressFileParser(__DIR__.'/../blogs/MarkFile1.md'));
+
+        $data = $pressFileParser->getData();
+
+        $this->assertEquals('# Heading\n\nThe content', $data['body']);
+        
+
+
+    }
 }
