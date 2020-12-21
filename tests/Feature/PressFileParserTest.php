@@ -60,10 +60,8 @@ class PressFileParserTest extends TestCase{
 
         $data = $pressFileParser->getData();
 
-        $this->assertEquals('<h1>Heading</h1>\n<p>The content</p>', $data['body']);
+        $this->assertEquals("<h1>Heading</h1>\n<p>The content</p>", $data['body']);
         
-
-
     }
 
     /** @test */

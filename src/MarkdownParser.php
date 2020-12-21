@@ -1,7 +1,6 @@
 <?php
 
 namespace CodersTape\Press;
-use Parsedown;
 
 class MarkdownParser
 {

@@ -4,10 +4,13 @@ namespace CodersTape\Press;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class PressFileParser
 {
     protected $filename;
+
+    protected $rawData;
     protected $data;
 
     public function __construct($filename)
@@ -46,12 +49,33 @@ class PressFileParser
 
     protected function processFields(){
         foreach ($this->data as $field => $value){
-            if ($field === 'date') {
-                $this->data[$field] = Carbon::parse($value);
-                //dd($value);
-            } else if ($field === 'body' ){
-                $this->data[$field] = MarkdownParser::parse($value);
-            }
+            // if ($field === 'date') {
+            //     $this->data[$field] = Carbon::parse($value);
+            //     //dd($value);
+            //     //dd($this->data[$field]);
+            // } else if ($field === 'body' ){
+            //     $this->data[$field] = MarkdownParser::parse($value);
+            // }
+            
+            //if ($field === 'date'){
+                $class = 'CodersTape\\Press\\Fields\\'. Str::title($field);
+                
+                if (class_exists($class) && method_exists($class, 'process')){
+                    //dd($class::process($field, $value));
+                    $this->data = array_merge(
+                        $this->data,
+                        $class::process($field, $value)
+                    );
+                }
+            //}
+
+            
+            //dd($this->data);
+            //dd($field, $value);
+            
+            //dd($field, $value);
+            
         }
+        dd($this->data);
     }
 }
